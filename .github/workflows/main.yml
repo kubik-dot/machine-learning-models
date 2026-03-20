@@ -1,0 +1,19 @@
+name: Machine Learning Models Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Print a message
+      run: echo "Hello from GitHub Actions!"
+    - name: Build the model
+      run: |
+        python -c "import numpy as np; print(np.random.rand(1, 1))"
